@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questões</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="resp">
+        <h1>Teste - Analista de Desenvolvimento Júnior - Suporte</h1>
+        <h2>Questão 01 - SQL</h2>
+        <h3>Resposta A:</h3>
+        <pre>
+            <code>
+                SELECT
+                        p.nome_paciente, a.data_atendimento, a.nome_unidade
+                FROM 
+                        Pacientes p
+                JOIN 
+                        Atendimento a ON p.id_paciente = a.id_paciente
+                WHERE 
+                        a.cd_especialidade = 'Neurologia'
+                AND 
+                        a.data_atendimento BETWEEN DATE_SUB(CURDATE(), INTERVAL 6  MONTH) AND CURDATE()                
+            </code>
+        </pre>
+        <h3>Resposta B:</h3>
+        <pre>
+            <code>
+                SELECT 
+                        a.nome_paciente, b.descricao_prontuario,  c.data_atendimento
+                FROM 
+                        Prontuario b
+                JOIN 
+                        Pacientes a ON b.id_paciente = a.id_paciente
+                JOIN 
+                        Atendimento c ON b.id_atendimento = c.id_atendimento
+                WHERE 
+                        a.id_paciente = 123;
+            </code>
+        </pre>
+
+    <h2>Questão 02</h2>
+    <p>Primeiramente, conversaria com o cliente para entender o problema. Em seguida, 
+        reproduziria a situação em ambiente de teste. Ao identificar o erro, revisaria o código e o
+         banco de dados, buscando a causa. Informaria o cliente sobre as atualizações e status da ocorrência.</p>
+
+     <h2>Questão 03</h2>
+     <p>Primeiro, vejo se o problema pode ser por erro do usuário e ajudo ele se for.
+         Se não, tento fazer o mesmo erro acontecer de novo, olho o código e os registros de log.
+          Ao descobrir o que tá causando, arrumo pra evitar que aconteça de novo.</p>
+
+    <h2>Questão 04</h2>
+    <p>Começo analisando o problema e fazendo testes básicos. Como não estou familiarizado com a
+         situação, aviso meu superior e pergunto à equipe se já viram algo parecido.
+          Enquanto aguardo respostas, faço uma pesquisa pra tentar encontrar a melhor solução para o cliente.</p>
+
+        <a class="btn-voltar" href="../index.html">Voltar</a>
+    </div>
+</body>
+</html>
